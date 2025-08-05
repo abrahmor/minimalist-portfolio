@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+    <title>Minimalist Portfolio</title>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#home">
+                    <img src="assets/logo.png" alt="logo">
+                </a>
+            </div>
+
+            <div class="nav-links">
+                <span class="hover-bg"></span>
+                <a href="#">Projects</a>
+                <a href="#">Skills</a>
+                <a href="#">Education</a>
+            </div>
+
+            <button class="more-btn">
+                <i class="ti ti-dots"></i>
+            </button>
+        </nav>
+        <nav class="mini-menu" id="miniMenu">
+            <span class="hover-bg mini-hover-bg"></span>
+            <ul>
+                <li><a href="#" target="_blank"><i class="ti ti-brand-github"></i> Github</a></li>
+                <li><a href="#" target="_blank"><i class="ti ti-brand-linkedin"></i> LinkedIn</a></li>
+                <li><a href="#" target="_blank"><i class="ti ti-mail"></i> Mail</a></li>
+                <li><a href="#" target="_blank"><i class="ti ti-file-cv"></i> Resume</a></li>
+            </ul>
+            <div class="mini-menu-divider"></div>
+            <div class="mini-menu-actions" id="miniMenuActions">
+                <span class="hover-bg mini-hover-bg mini-hover-bg-actions"></span>
+                <button title="Desktop mode"><i class="ti ti-device-desktop"></i></button>
+                <button title="Dark mode"><i class="ti ti-moon"></i></button>
+                <button title="Light mode"><i class="ti ti-sun"></i></button>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <img src="assets/gatinho.png" alt="" class="hero-avatar">
+                <h1>Hi I'm Abraham, Product Designer and Web Developer</h1>
+                <p>
+                    I am a freelance developer working remotely worldwide. 
+                    Since 2023, I have been living in Peru.
+                    I create useful web applications.
+                </p>
+                <button onclick="window.location.href='mailto:abrahamm.dev@gmail.com'" class="hero-btn">
+                    Get in touch<i class="ti ti-mail"></i>
+                </button>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
