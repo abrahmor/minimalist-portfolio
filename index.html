@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
     <title>Minimalist Portfolio</title>
+    <script>
+        const savedTheme = localStorage.getItem('theme') || 'system';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
 </head>
 
 <body>
@@ -14,54 +18,264 @@
         <nav class="navbar">
             <div class="logo">
                 <a href="#home">
-                    <img src="assets/logo.png" alt="logo">
+                    <img class="logo-white" src="assets/logo-white.png" alt="logo">
+                    <img class="logo-black" src="assets/logo-black.png" alt="logo">
                 </a>
             </div>
 
             <div class="nav-links">
                 <span class="hover-bg"></span>
-                <a href="#">Projects</a>
-                <a href="#">Skills</a>
-                <a href="#">Education</a>
+                <a href="#projects">Proyectos</a>
+                <a href="#skills">Habilidades</a>
+                <a href="#formation">Formación</a>
             </div>
 
-            <button class="more-btn">
+            <button class="more-btn" alt="More options">
                 <i class="ti ti-dots"></i>
             </button>
         </nav>
-        <nav class="mini-menu" id="miniMenu">
+        <nav id="miniMenu" class="mini-menu">
             <span class="hover-bg mini-hover-bg"></span>
             <ul>
-                <li><a href="#" target="_blank"><i class="ti ti-brand-github"></i> Github</a></li>
-                <li><a href="#" target="_blank"><i class="ti ti-brand-linkedin"></i> LinkedIn</a></li>
-                <li><a href="#" target="_blank"><i class="ti ti-mail"></i> Mail</a></li>
-                <li><a href="#" target="_blank"><i class="ti ti-file-cv"></i> Resume</a></li>
+                <li><a href="https://www.linkedin.com/in/abrahamm" target="_blank"><i class="ti ti-brand-linkedin"></i>
+                        LinkedIn</a></li>
+                <li><a href="https://github.com/abrahmor" target="_blank"><i class="ti ti-brand-github"></i> GitHub</a>
+                </li>
+                <li><a href="mailto:abrahamm.dev@gmail.com" target="_blank"><i class="ti ti-mail"></i> Mail</a></li>
+                <li><a href="#" target="_blank"><i class="ti ti-file-cv"></i> CV</a></li>
             </ul>
             <div class="mini-menu-divider"></div>
-            <div class="mini-menu-actions" id="miniMenuActions">
+            <div id="miniMenuActions" class="mini-menu-actions">
                 <span class="hover-bg mini-hover-bg mini-hover-bg-actions"></span>
-                <button title="Desktop mode"><i class="ti ti-device-desktop"></i></button>
-                <button title="Dark mode"><i class="ti ti-moon"></i></button>
-                <button title="Light mode"><i class="ti ti-sun"></i></button>
+                <button class="active">Es</button>
+                <button>En</button>
             </div>
         </nav>
     </header>
     <main>
-        <section class="hero" id="home">
+        <!-- Hero Section -->
+        <section id="home" class="hero">
             <div class="hero-content">
-                <img src="assets/gatinho.png" alt="" class="hero-avatar">
+                <img src="assets/hero-avatar.jpeg" alt="Abraham's Photo" class="hero-avatar">
                 <h1>Hi I'm Abraham, Product Designer and Web Developer</h1>
                 <p>
-                    I am a freelance developer working remotely worldwide. 
+                    I am a freelance developer working remotely worldwide.
                     Since 2023, I have been living in Peru.
                     I create useful web applications.
                 </p>
-                <button onclick="window.location.href='mailto:abrahamm.dev@gmail.com'" class="hero-btn">
-                    Get in touch<i class="ti ti-mail"></i>
-                </button>
+                <a href="mailto:abrahamm.dev@gmail.com" class="hero-btn">Contáctame<i class="ti ti-mail"></i></a>
             </div>
         </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <h2 class="section-title">Proyectos</h2>
+
+            <article class="project-card">
+                <div class="project-image">
+                    <img src="assets/inventory-system.png" alt="Inventory management project screenshot">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Liftory - Inventory management</h3>
+                    <div class="project-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Firebase</span>
+                    </div>
+                    <p class="project-description">
+                        A simple and efficient inventory management system designed to help businesses track stock,
+                        organize
+                        products, and streamline operations in real time.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://github.com/abrahmor/liftory" target="_blank" class="project-link-btn">
+                            <i class="ti ti-brand-github"></i> Code
+                        </a>
+                        <a href="https://liftory.vercel.app/" target="_blank" class="project-link-btn">
+                            <i class="ti ti-external-link"></i> Preview
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-image">
+                    <img src="assets/saakinun-ecommerce.png" alt="Saakinun - E-commerce project screenshot">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Saakinun - E-commerce</h3>
+                    <div class="project-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Next.js</span>
+                        <span class="tag">Tailwind CSS</span>
+                        <span class="tag">TypeScript</span>
+                    </div>
+                    <p class="project-description">
+                        An intuitive expense tracker designed to help you manage your personal finances, monitor daily
+                        spending, and build better money habits with ease.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://github.com/abrahmor/saakinun" target="_blank" class="project-link-btn">
+                            <i class="ti ti-brand-github"></i> Code
+                        </a>
+                        <a href="https://www.saakinun.com/" target="_blank" class="project-link-btn">
+                            <i class="ti ti-external-link"></i> Preview
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-image">
+                    <img src="assets/saakinun-ecommerce.png" alt="Saakinun - E-commerce project screenshot">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Saakinun - E-commerce</h3>
+                    <div class="project-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Next.js</span>
+                        <span class="tag">Tailwind CSS</span>
+                        <span class="tag">TypeScript</span>
+                    </div>
+                    <p class="project-description">
+                        An intuitive expense tracker designed to help you manage your personal finances, monitor daily
+                        spending, and build better money habits with ease.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://github.com/abrahmor/saakinun" target="_blank" class="project-link-btn">
+                            <i class="ti ti-brand-github"></i> Code
+                        </a>
+                        <a href="https://www.saakinun.com/" target="_blank" class="project-link-btn">
+                            <i class="ti ti-external-link"></i> Preview
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills-expertise-section">
+            <h2><!--<i class="ti ti-bolt"></i>--> Habilidades</h2>
+            <div class="skills-group">
+                <h3><i class="ti ti-code"></i> Frontend Development</h3>
+                <div class="skills-chips">
+                    <span class="chip">HTML</span>
+                    <span class="chip">CSS</span>
+                    <span class="chip">JavaScript/TypeScript</span>
+                    <span class="chip">React</span>
+                    <span class="chip">Next.js</span>
+                    <span class="chip">Tailwind CSS</span>
+                    <span class="chip">Bootstrap</span>
+                    <span class="chip">Vercel AI SDK</span>
+                    <span class="chip">GSAP</span>
+                </div>
+            </div>
+            <div class="skills-group">
+                <h3><i class="ti ti-server"></i> Backend &amp; Systems</h3>
+                <div class="skills-chips">
+                    <span class="chip">Unix</span>
+                    <span class="chip">C</span>
+                    <span class="chip">Python</span>
+                    <span class="chip">Typescript</span>
+                    <span class="chip">Git</span>
+                    <span class="chip">GitHub</span>
+                    <span class="chip">Docker</span>
+                    <span class="chip">GCP</span>
+                    <span class="chip">PostgreSQL</span>
+                </div>
+            </div>
+            <div class="skills-group">
+                <h3><i class="ti ti-brush"></i> Design &amp; Creative Tools</h3>
+                <div class="skills-chips">
+                    <span class="chip">Figma</span>
+                    <span class="chip">Photoshop</span>
+                    <span class="chip">Canva</span>
+                    <span class="chip">Keynote</span>
+                </div>
+            </div>
+            <div class="skills-group">
+                <h3><i class="ti ti-users-group"></i> Soft Skills</h3>
+                <div class="skills-chips">
+                    <span class="chip">Communication</span>
+                    <span class="chip">Problem-Solving</span>
+                    <span class="chip">Adaptability</span>
+                    <span class="chip">Learning Agility</span>
+                    <span class="chip">Teamwork</span>
+                    <span class="chip">Creativity</span>
+                    <span class="chip">Focus</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formation Section -->
+        <section id="formation" class="formation">
+            <h2><!--<i class="ti ti-school"></i>--> Formación</h2>
+            <div class="formation-list">
+                <div class="formation-card">
+                    <div class="formation-header">
+                        <div class="formation-logo">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXqjPNtfM-ot5YLNcWT2hF4iJWeOYg50nzxA&s"
+                                alt="CS50X">
+                        </div>
+                        <div class="formation-main-info">
+                            <div class="formation-top-row">
+                                <h3 class="formation-company">CS50x - Harvard University</h3>
+                                <span class="formation-date">Feb. 2025 - Mar. 2025</span>
+                            </div>
+                            <div class="formation-job-title">Introduction to Computer Science</div>
+                        </div>
+                    </div>
+                    <p class="formation-description">Intensive course covering algorithms, data structures, C, Python,
+                        SQL, HTML, CSS, and
+                        JavaScript. Solving complex problems and developing real-world projects.<br>
+                        <a href="https://cs50.harvard.edu/certificates/eb70afd1-b6c3-465b-b27f-cacc7bd7bc95"
+                            target="_blank" class="formation-link">View certificate <i
+                                class="ti ti-arrow-up-right"></i></a>
+                    </p>
+                </div>
+
+                <div class="formation-card">
+                    <div class="formation-header">
+                        <div class="formation-logo">
+                            <img src="https://static.dezeen.com/uploads/2025/05/sq-google-g-logo-update_dezeen_2364_col_0-852x852.jpg"
+                                alt="Google Academy">
+                        </div>
+                        <div class="formation-main-info">
+                            <div class="formation-top-row">
+                                <h3 class="formation-company">Google Digital Academy</h3>
+                                <span class="formation-date">Mar. 2025 - Sept. 2025</span>
+                            </div>
+                            <div class="formation-job-title">Introduction to Web Development</div>
+                        </div>
+                    </div>
+                    <p class="formation-description">Course focused on the fundamentals of HTML and CSS, accessible web
+                        design, semantic
+                        structure, On-Page SEO, and web development best practices.<br>
+                        <a href="#" class="formation-link">View certificate <i class="ti ti-arrow-up-right"></i></a>
+                    </p>
+                </div>
+        </section>
     </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="mailto:abrahamm.dev@gmail.com">Contacto</a>
+            </div>
+            <div class="theme-switch" data-active="system">
+                <div class="switch-bg"></div>
+                <button class="switch-btn" data-theme="system" aria-label="System Preference">
+                    <i class="ti ti-device-desktop"></i>
+                </button>
+                <button class="switch-btn" data-theme="light" aria-label="Light Mode">
+                    <i class="ti ti-sun"></i>
+                </button>
+                <button class="switch-btn" data-theme="dark" aria-label="Dark Mode">
+                    <i class="ti ti-moon"></i>
+                </button>
+            </div>
+        </div>
+    </footer>
     <script src="script.js"></script>
 </body>
 

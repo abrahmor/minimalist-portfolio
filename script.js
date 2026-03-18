@@ -33,6 +33,32 @@ document.addEventListener('DOMContentLoaded', () => {
             header.classList.remove('scrolled');
         }
     });
+
+    // Theme Switch
+    const themeSwitch = document.querySelector('.theme-switch');
+    const themeButtons = document.querySelectorAll('.switch-btn');
+
+    if (themeSwitch) {
+        // Load preference
+        const savedTheme = localStorage.getItem('theme') || 'system';
+        applyTheme(savedTheme);
+
+        themeButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const theme = btn.dataset.theme;
+                applyTheme(theme);
+                localStorage.setItem('theme', theme);
+            });
+        });
+    }
+
+    function applyTheme(theme) {
+        if (themeSwitch) {
+            themeSwitch.dataset.active = theme;
+        }
+
+        document.documentElement.setAttribute('data-theme', theme);
+    }
 });
 
 // Position mini menu below trigger
