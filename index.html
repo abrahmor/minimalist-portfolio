@@ -25,9 +25,9 @@
 
             <div class="nav-links">
                 <span class="hover-bg"></span>
-                <a href="#projects">Proyectos</a>
-                <a href="#skills">Habilidades</a>
-                <a href="#formation">Formación</a>
+                <a href="#projects" data-i18n="nav.projects">Proyectos</a>
+                <a href="#skills" data-i18n="nav.skills">Habilidades</a>
+                <a href="#formation" data-i18n="nav.formation">Formación</a>
             </div>
 
             <button class="more-btn" alt="More options">
@@ -35,20 +35,20 @@
             </button>
         </nav>
         <nav id="miniMenu" class="mini-menu">
-            <span class="hover-bg mini-hover-bg"></span>
             <ul>
+                <span class="hover-bg mini-hover-bg"></span>
                 <li><a href="https://www.linkedin.com/in/abrahamm" target="_blank"><i class="ti ti-brand-linkedin"></i>
                         LinkedIn</a></li>
                 <li><a href="https://github.com/abrahmor" target="_blank"><i class="ti ti-brand-github"></i> GitHub</a>
                 </li>
                 <li><a href="mailto:abrahamm.dev@gmail.com" target="_blank"><i class="ti ti-mail"></i> Mail</a></li>
-                <li><a href="#" target="_blank"><i class="ti ti-file-cv"></i> CV</a></li>
+                <li><a href="#" target="_blank"><i class="ti ti-file-text"></i> CV</a></li>
             </ul>
             <div class="mini-menu-divider"></div>
-            <div id="miniMenuActions" class="mini-menu-actions">
-                <span class="hover-bg mini-hover-bg mini-hover-bg-actions"></span>
-                <button class="active">Es</button>
-                <button>En</button>
+            <div id="miniMenuActions" class="lang-switch" data-active="es">
+                <div class="lang-switch-bg"></div>
+                <button class="lang-btn" data-lang="es">ES</button>
+                <button class="lang-btn" data-lang="en">EN</button>
             </div>
         </nav>
     </header>
@@ -57,106 +57,192 @@
         <section id="home" class="hero">
             <div class="hero-content">
                 <img src="assets/hero-avatar.jpeg" alt="Abraham's Photo" class="hero-avatar">
-                <h1>Hi I'm Abraham, Product Designer and Web Developer</h1>
-                <p>
+                <h1 data-i18n="hero.title">Hi I'm Abraham, Product Designer and Web Developer</h1>
+                <p data-i18n="hero.desc">
                     I am a freelance developer working remotely worldwide.
                     Since 2023, I have been living in Peru.
                     I create useful web applications.
                 </p>
-                <a href="mailto:abrahamm.dev@gmail.com" class="hero-btn">Contáctame<i class="ti ti-mail"></i></a>
+                <a href="mailto:abrahamm.dev@gmail.com" class="hero-btn" data-i18n="hero.btn">Contáctame <i
+                        class="ti ti-mail"></i></a>
             </div>
         </section>
 
         <!-- Projects Section -->
         <section id="projects" class="projects-section">
-            <h2 class="section-title">Proyectos</h2>
+            <h2 class="section-title" data-i18n="projects.title">Proyectos</h2>
 
-            <article class="project-card">
-                <div class="project-image">
-                    <img src="assets/inventory-system.png" alt="Inventory management project screenshot">
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title">Liftory - Inventory management</h3>
-                    <div class="project-tags">
-                        <span class="tag">HTML</span>
-                        <span class="tag">CSS</span>
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">Firebase</span>
+            <div class="projects-grid">
+                <!-- Project 1: Fitness -->
+                <article class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <img src="assets/fitness-icon.png" alt="Fitness Icon">
+                        </div>
+                        <h3 class="project-title" data-i18n="project1.title">Fitness</h3>
                     </div>
-                    <p class="project-description">
-                        A simple and efficient inventory management system designed to help businesses track stock,
-                        organize
-                        products, and streamline operations in real time.
+                    <p class="project-description" data-i18n="project1.desc">
+                        Aplicación de seguimiento de entrenamientos y progresión física con métricas en tiempo real.
                     </p>
                     <div class="project-links">
-                        <a href="https://github.com/abrahmor/liftory" target="_blank" class="project-link-btn">
-                            <i class="ti ti-brand-github"></i> Code
+                        <a href="https://liftory.vercel.app/" target="_blank" class="project-link-btn"
+                            data-i18n="project.demo">
+                            <i class="ti ti-external-link"></i> Demo
                         </a>
-                        <a href="https://liftory.vercel.app/" target="_blank" class="project-link-btn">
-                            <i class="ti ti-external-link"></i> Preview
+                        <a onclick="openProjectModal('fitness')" class="project-link-btn" data-i18n="project.info">
+                            <i class="ti ti-eye"></i> Más info
                         </a>
                     </div>
-                </div>
-            </article>
+                </article>
 
-            <article class="project-card">
-                <div class="project-image">
-                    <img src="assets/saakinun-ecommerce.png" alt="Saakinun - E-commerce project screenshot">
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title">Saakinun - E-commerce</h3>
-                    <div class="project-tags">
-                        <span class="tag">React</span>
-                        <span class="tag">Next.js</span>
-                        <span class="tag">Tailwind CSS</span>
-                        <span class="tag">TypeScript</span>
+                <!-- Project 2: MelonMind -->
+                <article class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <img src="assets/melonmind-icon.png" alt="MelonMind Icon">
+                        </div>
+                        <h3 class="project-title" data-i18n="project2.title">MelonMind</h3>
                     </div>
-                    <p class="project-description">
-                        An intuitive expense tracker designed to help you manage your personal finances, monitor daily
-                        spending, and build better money habits with ease.
+                    <p class="project-description" data-i18n="project2.desc">
+                        Plataforma de bienestar y asistencia emocional con inteligencia artificial y análisis de estado de ánimo.
                     </p>
                     <div class="project-links">
-                        <a href="https://github.com/abrahmor/saakinun" target="_blank" class="project-link-btn">
-                            <i class="ti ti-brand-github"></i> Code
+                        <a href="https://melonmind.app/apps/mind/" target="_blank" class="project-link-btn primary"
+                            data-i18n="project.demo">
+                            <i class="ti ti-external-link"></i> Demo
                         </a>
-                        <a href="https://www.saakinun.com/" target="_blank" class="project-link-btn">
-                            <i class="ti ti-external-link"></i> Preview
+                        <a onclick="openProjectModal('melonmind')" class="project-link-btn" data-i18n="project.info">
+                            <i class="ti ti-eye"></i> Más info
                         </a>
                     </div>
-                </div>
-            </article>
+                </article>
 
-            <article class="project-card">
-                <div class="project-image">
-                    <img src="assets/saakinun-ecommerce.png" alt="Saakinun - E-commerce project screenshot">
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title">Saakinun - E-commerce</h3>
-                    <div class="project-tags">
-                        <span class="tag">React</span>
-                        <span class="tag">Next.js</span>
-                        <span class="tag">Tailwind CSS</span>
-                        <span class="tag">TypeScript</span>
+                <!-- Project 3: Saakinun -->
+                <article class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <img src="assets/saakinun-icon.png" alt="Saakinun Icon">
+                        </div>
+                        <h3 class="project-title" data-i18n="project3.title">Saakinun</h3>
                     </div>
-                    <p class="project-description">
-                        An intuitive expense tracker designed to help you manage your personal finances, monitor daily
-                        spending, and build better money habits with ease.
+                    <p class="project-description" data-i18n="project3.desc">
+                        Tienda virtual moderna y responsiva optimizada para una experiencia de compra fluida y rápida.
                     </p>
                     <div class="project-links">
-                        <a href="https://github.com/abrahmor/saakinun" target="_blank" class="project-link-btn">
-                            <i class="ti ti-brand-github"></i> Code
+                        <a href="https://www.saakinun.com/" target="_blank" class="project-link-btn primary"
+                            data-i18n="project.demo">
+                            <i class="ti ti-external-link"></i> Demo
                         </a>
-                        <a href="https://www.saakinun.com/" target="_blank" class="project-link-btn">
-                            <i class="ti ti-external-link"></i> Preview
+                        <a onclick="openProjectModal('saakinun')" class="project-link-btn" data-i18n="project.info">
+                            <i class="ti ti-eye"></i> Más info
                         </a>
                     </div>
+                </article>
+
+                <!-- Project 4: TaskFlow -->
+                <article class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <img src="assets/tasks-icon.png" alt="Tasks Icon">
+                        </div>
+                        <h3 class="project-title" data-i18n="project4.title">TaskFlow</h3>
+                    </div>
+                    <p class="project-description" data-i18n="project4.desc">
+                        Gestor de tareas y productividad con sincronización instantánea y organización intuitiva.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://taskflow.vercel.app/" target="_blank" class="project-link-btn primary"
+                            data-i18n="project.demo">
+                            <i class="ti ti-external-link"></i> Demo
+                        </a>
+                        <a onclick="openProjectModal('taskflow')" class="project-link-btn" data-i18n="project.info">
+                            <i class="ti ti-eye"></i> Más info
+                        </a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Single Reusable Project Dialog (App Store Style) -->
+            <dialog id="project-modal">
+                <div class="dialog-inner">
+                    <!-- Controls -->
+                    <div class="dialog-header">
+                        <div class="dialog-controls">
+                            <button class="dialog-btn expand-btn" onclick="prettyModal.toggleExpand('project-modal')"
+                                aria-label="Expandir modal">
+                                <svg class="icon-expand" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M14 4h6v6" />
+                                    <path d="M10 20H4v-6" />
+                                </svg>
+                                <svg class="icon-collapse" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M20 10h-6V4" />
+                                    <path d="M4 14h6v6" />
+                                </svg>
+                            </button>
+                            <button class="dialog-btn close-btn" onclick="prettyModal.close('project-modal')"
+                                aria-label="Cerrar modal">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 6L6 18" />
+                                    <path d="M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Content Body -->
+                    <div class="dialog-body">
+                        <!-- App Store Top Row -->
+                        <div class="appstore-header">
+                            <div class="appstore-icon">
+                                <img id="modalProjectIcon" src="" alt="Project Icon">
+                            </div>
+                            <div class="appstore-meta">
+                                <h3 id="modalProjectTitle" class="appstore-title"></h3>
+                                <p id="modalProjectSubtitle" class="appstore-subtitle"></p>
+                                <div class="appstore-actions">
+                                    <a id="modalProjectDemoBtn" href="#" target="_blank" class="appstore-btn primary">
+                                        <i class="ti ti-external-link"></i> <span data-i18n="dialog.open_app_text">Abrir app</span>
+                                    </a>
+                                    <a id="modalProjectRepoBtn" href="#" target="_blank" class="appstore-btn secondary">
+                                        <i class="ti ti-brand-github"></i> <span data-i18n="dialog.view_code_text">Repositorio</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Carousel with Navigation Controls -->
+                        <div class="carousel-wrapper">
+                            <button class="carousel-btn prev" onclick="scrollCarousel('modalProjectGallery', -1)" aria-label="Anterior captura">
+                                <i class="ti ti-chevron-left"></i>
+                            </button>
+                            <div id="modalProjectGallery" class="appstore-gallery">
+                                <!-- Dynamic screenshots rendered by JS -->
+                            </div>
+                            <button class="carousel-btn next" onclick="scrollCarousel('modalProjectGallery', 1)" aria-label="Siguiente captura">
+                                <i class="ti ti-chevron-right"></i>
+                            </button>
+                        </div>
+
+                        <!-- Description with highlighted text -->
+                        <p id="modalProjectLead" class="dialog-lead"></p>
+
+                        <!-- Features Bento Grid -->
+                        <div id="modalProjectFeatures" class="dialog-features-grid">
+                            <!-- Dynamic feature cards rendered by JS -->
+                        </div>
+                    </div>
                 </div>
-            </article>
+            </dialog>
         </section>
 
         <!-- Skills Section -->
         <section id="skills" class="skills-expertise-section">
-            <h2><!--<i class="ti ti-bolt"></i>--> Habilidades</h2>
+            <h2><!--<i class="ti ti-bolt"></i>--> <span data-i18n="skills.title">Habilidades</span></h2>
             <div class="skills-group">
                 <h3><i class="ti ti-code"></i> Frontend Development</h3>
                 <div class="skills-chips">
@@ -165,8 +251,8 @@
                     <span class="chip">JavaScript/TypeScript</span>
                     <span class="chip">React</span>
                     <span class="chip">Next.js</span>
+                    <span class="chip">Astro</span>
                     <span class="chip">Tailwind CSS</span>
-                    <span class="chip">Bootstrap</span>
                     <span class="chip">Vercel AI SDK</span>
                     <span class="chip">GSAP</span>
                 </div>
@@ -181,7 +267,7 @@
                     <span class="chip">Git</span>
                     <span class="chip">GitHub</span>
                     <span class="chip">Docker</span>
-                    <span class="chip">GCP</span>
+                    <span class="chip">AWS</span>
                     <span class="chip">PostgreSQL</span>
                 </div>
             </div>
@@ -210,8 +296,52 @@
 
         <!-- Formation Section -->
         <section id="formation" class="formation">
-            <h2><!--<i class="ti ti-school"></i>--> Formación</h2>
+            <h2><!--<i class="ti ti-school"></i>--> <span data-i18n="formation.title">Formación</span></h2>
             <div class="formation-list">
+                <div class="formation-card">
+                    <div class="formation-header">
+                        <div class="formation-logo">
+                            <img src="https://play-lh.googleusercontent.com/8OlSWa8G8YNM7NWBhFJXMKrEfWzeHgUF-MqXp7bJRKX4YadeYX2PygFdB1qWNHIREA5mnR90RVp_syDT8AVyTnU"
+                                alt="Tecsup">
+                        </div>
+                        <div class="formation-main-info">
+                            <div class="formation-top-row">
+                                <h3 class="formation-company" data-i18n="formation3.title">Diseño y Desarrollo de Software</h3>
+                            </div>
+                            <div class="formation-job-title" data-i18n="formation3.job">Tecsup</div>
+                        </div>
+                    </div>
+                    <p class="formation-description">
+                        <span data-i18n="formation3.desc">Formación en diseño y desarrollo de software, enfocada en aplicaciones web y móviles, programación orientada a objetos, bases de datos, arquitectura de software y tecnologías en la nube.</span><br>
+                        <a href="#" class="formation-link" data-i18n="formation.cert">View certificate <i
+                                class="ti ti-arrow-up-right"></i></a>
+                    </p>
+                </div>
+
+                <div class="formation-card">
+                    <div class="formation-header">
+                        <div class="formation-logo">
+                            <img src="https://media.licdn.com/dms/image/v2/C560BAQHZQ2B3IQO9xg/company-logo_200_200/company-logo_200_200/0/1631300517673?e=2147483647&v=beta&t=jLxUWoLPfPErsA99Og4htwjU68c_21GPWSa6jHV8L0w"
+                                alt="University of Helsinki">
+                        </div>
+                        <div class="formation-main-info">
+                            <div class="formation-top-row">
+                                <h3 class="formation-company">Full Stack Open</h3>
+                                <!--     -->
+                            </div>
+                            <div class="formation-job-title" data-i18n="formation2.job">University of Helsinki</div>
+                        </div>
+                    </div>
+                    <p class="formation-description">
+                        <span data-i18n="formation2.desc">Course focused on the fundamentals of HTML and CSS, accessible
+                            web
+                            design, semantic
+                            structure, On-Page SEO, and web development best practices.</span><br>
+                        <a href="#" class="formation-link" data-i18n="formation.cert">View certificate <i
+                                class="ti ti-arrow-up-right"></i></a>
+                    </p>
+                </div>
+
                 <div class="formation-card">
                     <div class="formation-header">
                         <div class="formation-logo">
@@ -220,47 +350,30 @@
                         </div>
                         <div class="formation-main-info">
                             <div class="formation-top-row">
-                                <h3 class="formation-company">CS50x - Harvard University</h3>
-                                <span class="formation-date">Feb. 2025 - Mar. 2025</span>
+                                <h3 class="formation-company">CS50x</h3>
+                                <!-- <span class="formation-date">Feb. 2025 - Mar. 2025</span> -->
                             </div>
-                            <div class="formation-job-title">Introduction to Computer Science</div>
+                            <div class="formation-job-title" data-i18n="formation1.job">Harvard University ·
+                                Introduction to Computer Science</div>
                         </div>
                     </div>
-                    <p class="formation-description">Intensive course covering algorithms, data structures, C, Python,
-                        SQL, HTML, CSS, and
-                        JavaScript. Solving complex problems and developing real-world projects.<br>
+                    <p class="formation-description">
+                        <span data-i18n="formation1.desc">Intensive course covering algorithms, data structures, C,
+                            Python,
+                            SQL, HTML, CSS, and
+                            JavaScript. Solving complex problems and developing real-world projects.</span><br>
                         <a href="https://cs50.harvard.edu/certificates/eb70afd1-b6c3-465b-b27f-cacc7bd7bc95"
-                            target="_blank" class="formation-link">View certificate <i
+                            target="_blank" class="formation-link" data-i18n="formation.cert">View certificate <i
                                 class="ti ti-arrow-up-right"></i></a>
                     </p>
                 </div>
-
-                <div class="formation-card">
-                    <div class="formation-header">
-                        <div class="formation-logo">
-                            <img src="https://static.dezeen.com/uploads/2025/05/sq-google-g-logo-update_dezeen_2364_col_0-852x852.jpg"
-                                alt="Google Academy">
-                        </div>
-                        <div class="formation-main-info">
-                            <div class="formation-top-row">
-                                <h3 class="formation-company">Google Digital Academy</h3>
-                                <span class="formation-date">Mar. 2025 - Sept. 2025</span>
-                            </div>
-                            <div class="formation-job-title">Introduction to Web Development</div>
-                        </div>
-                    </div>
-                    <p class="formation-description">Course focused on the fundamentals of HTML and CSS, accessible web
-                        design, semantic
-                        structure, On-Page SEO, and web development best practices.<br>
-                        <a href="#" class="formation-link">View certificate <i class="ti ti-arrow-up-right"></i></a>
-                    </p>
-                </div>
+            </div>    
         </section>
     </main>
     <footer>
         <div class="footer-content">
             <div class="footer-links">
-                <a href="mailto:abrahamm.dev@gmail.com">Contacto</a>
+                <a href="mailto:abrahamm.dev@gmail.com" data-i18n="footer.contact">Contacto</a>
             </div>
             <div class="theme-switch" data-active="system">
                 <div class="switch-bg"></div>
@@ -276,7 +389,10 @@
             </div>
         </div>
     </footer>
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/Flip.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/CustomEase.min.js"></script>
+    <script type="module" src="js/main.js"></script>
 </body>
 
 </html>
